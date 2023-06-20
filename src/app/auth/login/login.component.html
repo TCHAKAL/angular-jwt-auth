@@ -1,0 +1,11 @@
+<h3>Login page </h3>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <input formControlName="email" type="email" required placeholder="Email"/><br>
+  <input formControlName="password" type="password" required placeholder="Mot de passe"/><br>
+  <button [disabled]="!loginForm.valid" type="submit">Se connecter</button>
+</form>
+
+<div style="margin-top: 20px">
+  <strong>Requester data</strong> : <br>
+  {{ requestData$ | async | json}}
+</div>
